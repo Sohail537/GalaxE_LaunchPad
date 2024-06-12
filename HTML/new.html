@@ -1,0 +1,280 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login and Sign Up</title>
+<style>
+  /* Basic CSS */
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .form-group button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+
+  .error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <div id="loginForm">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="loginEmail">Email:</label>
+      <input type="email" id="loginEmail" required>
+    </div>
+    <button onclick="validateEmail()">Next</button>
+  </div>
+
+  <div id="passwordForm" style="display: none;">
+    <h2>Password</h2>
+    <div class="form-group">
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+    </div>
+    <button onclick="login()">Login</button>
+    <button onclick="addSignUp()">SignUp</button>
+  </div>
+
+  <div id="signUpForm" style="display: none;">
+    <h2>Sign Up</h2>
+    <div class="form-group">
+      <label for="signUpEmail">Email:</label>
+      <input type="email" id="signUpEmail" required>
+      <div id="signUpEmailError" class="error-message"></div>
+    </div>
+    <button onclick="validateSignUpEmail()">Next</button>
+  </div>
+
+  <div id="signUpPasswordForm" style="display: none;">
+    <h2>Password</h2>
+    <div class="form-group">
+      <label for="signUpPassword">Password:</label>
+      <input type="password" id="signUpPassword" required>
+      <div id="signUpPasswordError" class="error-message"></div>
+    </div>
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="addLogIn()">Log in</button>
+  </div>
+</div>
+
+<div class="popup" id="successPopup">
+  <p>Success!</p>
+</div>
+
+<div class="popup" id="failPopup">
+  <p>Failed!</p>
+</div>
+
+<div class="overlay" onclick="closePopup()"></div>
+
+<script>
+  function validateEmail() {
+    const email = document.getElementById('loginEmail').value;
+    if (email === '') {
+      alert('Please enter email.');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('passwordForm').style.display = 'block';
+  }
+
+  function login() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const storedPassword = localStorage.getItem(email);
+
+    if (password === storedPassword) {
+      showPopup('successPopup');
+    } else {
+      showPopup('failPopup');
+    }
+  }
+
+  function validateSignUpEmail() {
+    const email = document.getElementById('signUpEmail').value;
+    if (email === '') {
+      alert('Please enter email.');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    document.getElementById('signUpForm').style.display = 'none';
+    document.getElementById('signUpPasswordForm').style.display = 'block';
+  }
+  
+  function signUp() {
+    const email = document.getElementById('signUpEmail').value;
+    const password = document.getElementById('signUpPassword').value;
+    
+    if (password.length < 6) {
+      alert('Password must be at least 6 characters long.');
+      return;
+    }
+    
+    localStorage.setItem(email, password);
+    showPopup('successPopup');
+  }
+  
+  function addSignUp(){
+    document.getElementById("signUpForm").style.display = "block"; 
+    document.getElementById("loginForm").style.display = "none"; 
+    document.getElementById('passwordForm').style.display = 'none';
+  }
+  
+  function addLogIn(){
+    document.getElementById("loginForm").style.display = "block"; 
+    document.getElementById("signUpForm").style.display = "none"; 
+    document.getElementById('signUpPasswordForm').style.display = 'none';
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function showPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    const overlay = document.querySelector('.overlay');
+
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+
+    setTimeout(function() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    }, 2000);
+  }
+
+  function closePopup() {
+    const popups = document.querySelectorAll('.popup');
+    const overlay = document.querySelector('.overlay');
+
+    popups.forEach(function(popup) {
+      popup.style.display = 'none';
+    });
+
+    overlay.style.display = 'none';
+  }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display Course Details</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+    <div class="invalid course">
+        <a href="#" class="course-link">Hawk - Training</a>
+        <div class="course-tutors">
+            <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+            <p><b>Teacher:</b> <a href="">Mohan Rao Gorle</a></p>
+            <p><b>Teacher:</b> <a href="">Shivakumar Kandaswamy</a></p>
+            <p><b>Teacher:</b> <a href="">Suresh Muniraju</a></p>
+        </div>
+    </div>
+    <!-- other course divs -->
+</main>
+
+<script>
+  // Function to handle click event on course links
+    function displayCourseDetails(event) {
+        event.preventDefault(); // Prevent default link behavior
+        
+        // Get the course name
+        var courseName = event.target.innerText.trim();
+        
+        // Get the tutors' information
+        var tutorsInfo = event.target.nextElementSibling.innerHTML;
+        
+        // Store course details in localStorage
+        localStorage.setItem("courseName", courseName);
+        localStorage.setItem("tutorsInfo", tutorsInfo);
+        
+        // Redirect to another page
+        window.location.href = "displayContent.html";
+    }
+
+    // Add click event listeners to all course links
+    var courseLinks = document.querySelectorAll('.course-link');
+    courseLinks.forEach(function(link) {
+        link.addEventListener('click', displayCourseDetails);
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to your account</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/Microsoft_logo.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <main class="main">
+            <div class="login-block" id="login-block">
+                <img src="../assets/banner.png" alt="banner" class="banner">
+
+                <div class="login-content" id="login-content">
+                    <h2 class="title">Pick an account</h2>
+                    <div class="user-accounts" id="user-accounts">
+                        <div class="acc acc1" id="acc1">
+                            <div class="login-left" id="login-left">
+                                <img src="../assets/login-user.svg" class="login-icon" alt="Login user profile">
+                                <p id="saved-email">spathan@Galaxe.com</p>
+                            </div>
+                            <div class="login-right">
+                                <div class="forget-block" id="forget-block">
+                                    <button class="forget" id="forget">Forget</button>
+                                </div>
+                                <i class="ri-more-2-line" onclick="forgetBlock()"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acc" onclick="accountDisplay()">
+                        <div class="login-left">
+                            <img src="../assets/login-other.svg" class="login-icon" alt="Login other profile">
+                            <p>Use another account</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="password-container" id="password-container">
+                    <div class="password-display">
+                        <i class="ri-arrow-left-line left-arrow" onclick="passwordtologin()"></i>
+                        <p id="selected-email" class="selected-email"></p>
+                    </div>
+                    <div class="password-block">
+                        <h2>Enter Password</h2>
+                        <p class="error" id="error-message1"></p>
+                        <input type="password" placeholder="Password" id="login-password" autofocus><br>
+                        <a href="https://passwordreset.microsoftonline.com/?ru=https%3a%2f%2flogin.microsoftonline.com%2f6d731980-e9fc-4765-a965-1a83c1de56d7%2freprocess%3fctx%3drQQIARAAfVE7aBRRFJ3nbOIa1CzaaCNbbIIY5__bGRhk2El2XYOrRibZ8s17b3fHzM_5GN3awkLQUtIlTTBVtBIr6wgSOxE7LSSFpowBwVljOvVyOVws453Dg3Eu0yPJGDUu6ijQiM64iCIws1nlGF3qEwSKs8xhiye2pyZmJCri-Ib3bezG7fpFZe3j255dNoAyyLE4NjvNhHqJBDDHbhz68T1gUBRzEgRdyEcyzgYig77sQLbPxIH4FwA4AXwH4eGyyY43YEUSJNySrNOJG-j8uzo_6XjjyXFmBYZbmiW_-jpySrClxrti_BRekLEsFOZ2SNF0mD0zvlpYrV72GuzjtYVPYpGv84UjMCA8BHV1H85KuqViTBL0ohOg9xMiaqjBQL0CAdQkJmCiFYJu-EMUk9HA1TqKe55MqCaDnV_OUJGxCIP5Ag50S2C2d5GmjXJ6oUOeoKrVfAutjRakH8pNP52__sJ8Pvz9-a5ep7TGu5fiwETl3UYDzpu4Nu85C-x66Y92MA5sLlaYju3o712ejZtdUDeHpONgbB4-OU69P6P_7h1GU8s-fvDlF7Z_e2nj_eXXt2bfW7uRlG7f7rtxfvLGkNWaseXV-JrRbnQWylMxZRF8ZptecJOh22m6GzK0K9Qs1&mkt=en-US&hosted=0&device_platform=Windows+10&username=spathan%40galaxe.com">Forgot my password</a>
+                    </div>
+                    <button class="sign-in" id="sign-in" onclick="getPassword()">Sign in</button>
+                </div>
+                    
+                <div class="other-account" id="other-account">
+                    <div class="new-account-block" id="new-account-block">
+                        <h2 class="title">Sign in</h2>
+                        <p class="error" id="error-message2"></p>
+                        <input type="email" id="new-account-input" placeholder="someone@example.com" autofocus>
+                        <a href="#" class="account-access">Can’t access your account?</a>
+                        <div class="other-btns">
+                        <button class="back" onclick="accounttologin()">Back</button>
+                        <button class="next" id="next" onclick="createAccount()">Next</button>
+                    </div>
+                </div>
+                </div>
+
+                <div class="signin-options" id="signin-options">
+                    <button class="options-btn">
+                        <i class="fa fa-solid fa-key"></i> Sign-in options
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="login-footer">
+            <a href="https://www.microsoft.com/en-US/servicesagreement/">Terms of use</a>
+            <a href="https://privacy.microsoft.com/en-US/privacystatement">Privacy & cookies</a>
+            <button class="dots" onclick="troubleshooting()">. . .</button>
+        </footer>
+
+        <div class="dots-block" id="dots-block">
+            <div class="dots-content">
+                <h4>Troubleshooting details</h4>
+                <p class="para">If you contact your administrator, send this info to them.</p>
+                <a href="" class="copy">Copy info to clipboard</a>
+
+                <p class="para"><b>Error Code: </b>50058</p>
+                <p class="para"><b>Request Id: </b>d38c1e80-4c93-4147-b4d8-346482c37000</p>
+                <p class="para"><b>Correlation Id: </b>114c3e49-8a94-40fa-ad55-e59234cd104c</p>
+                <p class="last para"><b>Timestamp: </b>2024-04-18T19:07:53.714Z</p>
+
+                <p class="para"><b>Flag sign-in errors for review: </b><a href="">Enable flagging</a></p>
+                <p class="last-para">If you plan on getting help for this problem, enable flagging and try to reproduce the error within 20 minutes. Flagged events make diagnostics available and are raised to admin attention.</p>
+            </div>
+            <i class="fa-solid fa-xmark close" onclick="closeContent()"></i>
+        </div>
+    </div>
+
+    <script>
+        localStorage.clear();
+
+        if (!localStorage.getItem('accounts')) {
+            var defaultAccount = {
+                email: document.getElementById("saved-email").innerText.toLowerCase(),
+                password: "Sohail@2002"
+            };
+            localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
+        }
+
+        const loginBlock = document.getElementById("login-block");
+        const forgetBox = document.getElementById("forget-block");
+        const troubleshootingBlock = document.getElementById("dots-block");
+        const loginContentBlock = document.getElementById("login-content");
+        const newAccountBlock = document.getElementById("other-account");
+        const signinOptionsBlock = document.getElementById("signin-options");
+        const passwordBlock = document.getElementById("password-container");
+        const nextBtn = document.getElementById("next");
+
+        document.getElementById("login-left").addEventListener('click', () => {
+            passwordSection();
+        })
+
+        // saveEmail(document.getElementById("saved-email").innerText);
+        // savePassword("Sohail@2002");
+
+        const selectedEmail = document.getElementById("selected-email");
+        selectedEmail.textContent = defaultAccount.email;
+
+        const user1 = document.querySelector(".acc1");
+
+        window.onload = function() {
+            user1.classList.add("div-first");
+        }
+
+        window.onclick = () => {
+            user1.classList.remove("div-first");
+        }
+
+        function accountDisplay() {
+            newAccountBlock.classList.add("show-account");
+            loginContentBlock.classList.add("hide-login");
+            passwordBlock.classList.add("hide-password");
+            signinOptionsBlock.style.display = "block";
+            
+            loginContentBlock.classList.remove("show-login");
+            passwordBlock.classList.remove("show-password");
+            newAccountBlock.classList.remove("hide-account");
+            newAccountBlock.style.display = "block";
+            passwordBlock.style.display = "none";
+        } 
+        
+        function accounttologin(){
+            loginContentBlock.classList.add("show-login");
+            passwordBlock.classList.add("hide-password");
+            newAccountBlock.classList.add("hide-account");
+            signinOptionsBlock.style.display = "none";
+            
+            newAccountBlock.classList.remove("show-account");
+            passwordBlock.classList.remove("show-password");
+            loginContentBlock.classList.remove("hide-login");
+        }
+        
+        function passwordSection(){
+            passwordBlock.classList.add("show-password");
+            newAccountBlock.classList.add("hide-account");
+            loginContentBlock.classList.add("hide-login");
+
+            loginContentBlock.classList.remove("show-login");
+            newAccountBlock.classList.remove("show-account");
+            passwordBlock.classList.remove("hide-password");
+            passwordBlock.style.display = "block";
+            newAccountBlock.style.display = "none";
+        }
+
+        function passwordtologin(){
+            loginContentBlock.classList.add("show-login");
+            passwordBlock.classList.add("hide-password");
+            signinOptionsBlock.style.display = "none";
+            
+            passwordBlock.classList.remove("show-password");
+            loginContentBlock.classList.remove("hide-login");
+            newAccountBlock.style.display = "none";
+        }
+
+        // function getEmailCount() {
+        //     return Number(localStorage.getItem('email.count'));
+        // }
+
+        // function getEmailByIndex(index) {
+        //     return localStorage.getItem(`email${index}`);
+        // }
+
+        // function saveEmail(email) {
+        //     const nextIndex = getEmailCount() + 1;
+        //     localStorage.setItem(`email${nextIndex}`, email);
+        //     localStorage.setItem('email.count', nextIndex);
+        // }
+
+        // function isEmailExists(email) {
+        //     const emailsCount = getEmailCount();
+        //     for (let i = 0; i <= emailsCount; i++) {
+        //         if (getEmailByIndex(i) === email) return true;
+        //     }
+        //     return false;
+        // }
+
+        // function getPasswordCount() {
+        //     return Number(localStorage.getItem('password.count'));
+        // }
+
+        // function getPasswordByIndex(index) {
+        //     return localStorage.getItem(`password${index}`);
+        // }
+
+        // function savePassword(password) {
+        //     const nextIndex = getPasswordCount() + 1;
+        //     localStorage.setItem(`password${nextIndex}`, password);
+        //     localStorage.setItem('password.count', nextIndex);
+        // }
+
+        // function isPasswordExists(password) {
+        //     const passwordCount = getPasswordCount();
+        //     for (let i = 0; i <= passwordCount; i++) {
+        //         if (getPasswordByIndex(i) === password) return true;
+        //     }
+        //     return false;
+        // }
+
+        function validateEmail(email) {
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+            for (var i = 0; i < accounts.length; i++) {
+                if (accounts[i].email === email) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function validatePassword(password) {
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+            for (var i = 0; i < accounts.length; i++) {
+                if (accounts[i].password === password) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        var i=1;
+
+        function createAccount(){
+            var accountInput = document.getElementById("new-account-input").value.toLowerCase();
+            const accountInputError = document.getElementById("error-message2");
+            accountInputError.textContent = "";
+
+            const regex = RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+    
+            if (accountInput == ""){
+                accountInputError.textContent = "Enter a valid email address, phone number, or Skype name.";
+            }
+            else {
+                if (regex.test(accountInput)) {
+                    if (!validateEmail(accountInput)) {
+                        accountInputError.textContent = "Email already exists! Please choose a different email.";
+                        return;
+                    }
+                    else{
+                        nextBtn.addEventListener('click', passwordSection.call());
+                        selectedEmail.textContent = accountInput.toLowerCase();
+                    
+                        // saveEmail(accountInput);
+                    }
+                }
+                else{
+                    accountInputError.textContent = "Invalid email address, phone number, or Skype name.";
+                }
+            }
+        }
+
+        function getPassword(){
+            var email = selectedEmail.textContent;
+            var passwordInput = document.getElementById("login-password").value;
+            const passwordInputError = document.getElementById("error-message1");
+            passwordInputError.textContent = "";
+
+            const passwordRegex = RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+
+            if (passwordInput == ""){
+                passwordInputError.textContent = "Please enter your password.";
+            }
+            else {
+                breakme : if (passwordRegex.test(passwordInput)){
+                    for (var i = 0; i < accounts.length; i++) {
+                        if (email === defaultAccount.email || accounts[i].email === email){
+                            if (passwordInput != defaultAccount.password){
+                                passwordInputError.innerHTML = `<p>Your account or password is incorrect. If you don't remember your password, <a href="">reset it now.</a></p>`;
+                            }
+                            else{
+                                window.location.href = "./home.html";
+                            }
+                        }
+                        else{
+                            if (!validatePassword(passwordInput)) {
+                                passwordInputError.textContent = "Password already exists! Please choose a different password.";
+                                return;
+                            }
+                            else{
+                                window.location.href = "./home.html";
+
+                                var newAccount = {
+                                    email: email,
+                                    password: passwordInput
+                                };
+    
+                                var accounts = JSON.parse(localStorage.getItem('accounts'));
+                                accounts.push(newAccount);
+                                localStorage.setItem('accounts', JSON.stringify(accounts));
+                                alert("Account created successfully!");
+
+                                addUserProfile();
+                                break breakme;
+                            }
+                        }
+                    }
+                }
+                else{
+                    passwordInputError.textContent = "Invalid password. Please enter again!";
+                }
+            }
+            document.getElementById('new-account-input').value = '';
+            document.getElementById('login-password').value = '';
+        }
+
+        // addUserProfile();
+        
+        function addUserProfile() {
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+            var userProfileDiv = document.getElementById('user-accounts');
+
+            if (accounts.length >= 1){
+                var userProfile = document.createElement('div');
+                userProfile.classList = 'acc acc' + (i+1);
+                userProfile.id = 'acc' + (i+1);
+
+                const passwordLeftSection = document.createElement('div');
+                passwordLeftSection.className = 'login-left';
+                passwordLeftSection.id = 'login-left';
+                
+                passwordLeftSection.innerHTML = `
+                    <img src="../assets/login-user.svg" class="login-icon" alt="Login user profile">
+                    <p id="new-email">${accounts[accounts.length - 1].email}</p>
+                `;
+
+                const passwordRightSection = document.createElement('div');
+                passwordRightSection.className = 'login-right';
+
+                const passwordRightPart1 = document.createElement('div');
+                passwordRightPart1.className = 'forget-block';
+                passwordRightPart1.id = 'forget-block';
+                
+                passwordRightPart1.innerHTML = `
+                <button class="forget" id="forget">Forget</button>
+                `;
+                
+                const passwordRightPart2 = document.createElement('i');
+                passwordRightPart2.className = 'ri-more-2-line';
+
+                passwordRightSection.appendChild(passwordRightPart1);
+                passwordRightSection.appendChild(passwordRightPart2);
+
+                userProfile.appendChild(passwordLeftSection);
+                userProfile.appendChild(passwordRightSection);
+                            
+                i += 1;
+                userProfileDiv.appendChild(userProfile);
+            }
+        }
+
+        function forgetBlock(){
+            forgetBox.classList.toggle("show-forget");
+        }
+    
+        document.getElementById("forget").addEventListener('click', () => {
+            // var accounts = JSON.parse(localStorage.getItem('accounts'));
+            // console.log(accounts)
+
+            // // console.log(accounts.filter((account) => {
+            // //     return account.email !== emailToRemove;
+            // // }));
+            // forgetAccount(defaultAccount.email)
+            localStorage.clear();
+            document.getElementById("acc1").style.display = "none";
+        });
+
+        function forgetAccount(emailToRemove) {
+            console.log(emailToRemove)
+            var confirmed = confirm("Are you sure you want to remove this account?");
+            if (confirmed) {
+                var accounts = JSON.parse(localStorage.getItem('accounts'));
+                var updatedAccounts = accounts.filter(function(account) {
+                    return account.email !== emailToRemove;
+                });
+                localStorage.setItem('accounts', JSON.stringify(updatedAccounts));
+                alert("Account removed successfully!");
+                
+                addUserProfile();
+            }
+        }
+        
+        function troubleshooting(){
+            troubleshootingBlock.classList.toggle("show-dots");
+            loginBlock.classList.toggle("show-dots");
+        }
+        
+        function closeContent(){
+            troubleshootingBlock.classList.remove("show-dots");
+            loginBlock.classList.remove("show-dots");
+        }
+    </script>
+</body>
+</html>

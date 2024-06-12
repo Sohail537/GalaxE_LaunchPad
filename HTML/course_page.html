@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Course</title>
+        <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="./my_courses.html"><img src="../assets/GxLaunchPad_icon.png" alt="icon"></a>
+            <div class="nav-links">
+                <a href="./home.html" class="links link1">Home</a>
+                <a href="./my_courses.html" class="links">My Courses</a>
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bell" id="bell"></i>
+            <i class="fa-solid fa-comment"></i>
+            <div class="user" id="user-btn">
+                <p class="user-icon">SP</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bell-box notifications" id="notifications-drop">
+        <div class="part1">
+            <h5>Notifications</h5>
+            <div class="part1-links">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <div class="part2"><p>You have no notifications</p></div>
+        <div class="part3"><a href="./notifications.html">See all</a></div>
+    </div>
+
+    <div class="drop-box profile-drop" id="profile-drop">
+        <p>Profile</p>
+        <p>Grades</p>
+        <p>Calendar</p>
+        <p>Private files</p>
+        <p>Reports</p><hr class="line">
+        <p>Preferences</p><hr class="line">
+        <p onclick="logOut()">Log out</p>
+    </div>
+
+    <div class="course-page-block">
+        <header>
+            <div class="course-name" id="courseName"></div>
+            <h1>Enrolment Options</h1><br>
+            <a href="" class="course-link" id="courseLink"></a>
+        </header>
+        <div id="tutorsInfo" class="tutors-info"></div><br>
+
+        <p>You cannot enrol yourself in this course.</p><br>
+        <div class="coursepage-btn">
+            <a href="./home.html"><button>Continue</button></a>
+        </div>
+    </div>
+
+    <footer class="home-footer footer" id="query-btn">
+        <a href="#">?</a>
+    </footer>
+
+    <div class="footer-drop">
+        <div class="footer-box query-box" id="query-box">
+            <p><i class="fa-regular fa-envelope"></i> <a href="">Contact site support</a></p><hr class="line">
+            <p>You are logged in as <a href="">Sohail Ahamed Khan Pathan (Log out)</a></p>
+            <p><a href="">Reset user tour on this page</a></p>
+            <p><a href="">Data retention summary</a></p><hr class="line">
+            <p>Powered by <a href="">Moodle</a></p>
+        </div>
+    </div>
+
+    <script>
+        var courseName = localStorage.getItem("courseName");
+        var tutorsInfo = localStorage.getItem("tutorsInfo");
+
+        document.getElementById("courseName").innerHTML = "<h1>" + courseName + "</h1>";
+        document.getElementById("tutorsInfo").innerHTML = tutorsInfo;
+        document.getElementById("courseLink").innerHTML = courseName;
+
+        const bellBtn = document.getElementById("bell");
+        const bellBlock = document.getElementById("notifications-drop");
+
+        const userBtn = document.getElementById("user-btn");
+        const userBlock = document.getElementById("profile-drop");
+
+        const queryBtn = document.getElementById("query-btn");
+        const queryBlock = document.getElementById("query-box");
+
+        bellBtn.addEventListener('click',  () => {
+            bellBlock.classList.toggle("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+        })
+        
+        userBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            userBlock.classList.toggle("display-drop");
+        })
+        
+        queryBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.toggle("display-drop");
+        })
+
+        function logOut(){
+            window.location.href = "./index.html";
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

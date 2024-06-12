@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gxLAUNCHPAD</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="./my_courses.html"><img src="../assets/GxLaunchPad_icon.png" alt="icon"></a>
+            <div class="nav-links">
+                <a href="./home.html" class="links link1">Home</a>
+                <a href="./my_courses.html" class="links">My Courses</a>
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bell" id="bell"></i>
+            <i class="fa-solid fa-comment"></i>
+            <div class="user" id="user-btn">
+                <p class="user-icon">SP</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bell-box notifications" id="notifications-drop">
+        <div class="part1">
+            <h5>Notifications</h5>
+            <div class="part1-links">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <div class="part2"><p>You have no notifications</p></div>
+        <div class="part3"><a href="./notifications.html">See all</a></div>
+    </div>
+
+    <div class="drop-box profile-drop" id="profile-drop">
+        <p>Profile</p>
+        <p>Grades</p>
+        <p>Calendar</p>
+        <p>Private files</p>
+        <p>Reports</p><hr class="line">
+        <p>Preferences</p><hr class="line">
+        <p onclick="logOut()">Log out</p>
+    </div>
+
+    <div class="home-container">
+        <header>
+            <h1>gxLAUNCHPAD</h1>
+            <h1>Available courses</h1>
+        </header>
+
+        <main>
+            <div class="invalid course">
+                <a href="" class="course-link">Hawk - Training</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                    <p><b>Teacher:</b> <a href="">Mohan Rao Gorle</a></p>
+                    <p><b>Teacher:</b> <a href="">Shivakumar Kandaswamy</a></p>
+                    <p><b>Teacher:</b> <a href="">Suresh Muniraju</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="" class="course-link">Internship- Batch3</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Apprenticeship_2024</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Punam Chakraborty</a></p>
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                </div>
+            </div>
+            <div class="course">
+                <a href="./course_view.html">Internship- Batch2</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Apprenticeship_2023</a>  
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Punam Chakraborty</a></p>
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                    <p><b>Teacher:</b> <a href="">Surya Mohan Kudikala</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Test</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">GxTraining Galaxe</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Launchpad_2023_SQL</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                    <p><b>Teacher:</b> <a href="">Soumya Choudhary</a></p>
+                    <p><b>Teacher:</b> <a href="">Anuhya Guntaka</a></p>
+                    <p><b>Teacher:</b> <a href="">Rusha Karan</a></p>
+                    <p><b>Teacher:</b> <a href="">Venkateswarlu Origanti</a></p>
+                    <p><b>Teacher:</b> <a href="">Aditi Padhy</a></p>
+                    <p><b>Teacher:</b> <a href="">Lakshmi Triveni Ponduri</a></p>
+                    <p><b>Teacher:</b> <a href="">Dnyaneshwari Ramdas Dhumal</a></p>
+                    <p><b>Teacher:</b> <a href="">Narayana Kumar Thiraviyam</a></p>
+                    <p><b>Teacher:</b> <a href="">Anil Kumar Vasantha</a></p>
+                    <p><b>Teacher:</b> <a href="">Gowri Sathwika Viswanadham</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Launchpad2023_DotNet</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                    <p><b>Teacher:</b> <a href="">Sreevani Ketineni</a></p>
+                    <p><b>Teacher:</b> <a href="">Sreevalli Malla</a></p>
+                    <p><b>Teacher:</b> <a href="">Kavi Priya Mani</a></p>
+                </div>
+            </div>
+            <div class="invalid course">
+                <a href="#" class="course-link">Launchpad_2023_Business Analysis</a>
+                <div class="course-tutors">
+                    <p><b>Teacher:</b> <a href="">Kavyashree Chandranna</a></p>
+                    <p><b>Teacher:</b> <a href="">Keerthana Jayanna</a></p>
+                    <p><b>Teacher:</b> <a href="">Malateesh Joshi</a></p>
+                    <p><b>Teacher:</b> <a href="">Vishnu Kashyap</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="home-footer footer" id="query-btn">
+        <a href="#">?</a>
+    </footer>
+
+    <div class="footer-drop">
+        <div class="footer-box query-box" id="query-box">
+            <p><i class="fa-regular fa-envelope"></i> <a href="">Contact site support</a></p><hr class="line">
+            <p>You are logged in as <a href="">Sohail Ahamed Khan Pathan (Log out)</a></p>
+            <p><a href="">Reset user tour on this page</a></p>
+            <p><a href="">Data retention summary</a></p><hr class="line">
+            <p>Powered by <a href="">Moodle</a></p>
+        </div>
+    </div>
+
+    <script>
+        function displayCourseDetails(e) {
+            e.preventDefault();
+            
+            var courseName = e.target.innerText.trim();            
+            var tutorsInfo = e.target.nextElementSibling.innerHTML;
+            
+            localStorage.setItem("courseName", courseName);
+            localStorage.setItem("tutorsInfo", tutorsInfo);
+            
+            window.location.href = "./course_page.html";
+        }
+
+        var courseLinks = document.querySelectorAll('.course-link');
+        courseLinks.forEach(function(link) {
+            link.addEventListener('click', displayCourseDetails);
+        });
+
+        const bellBtn = document.getElementById("bell");
+        const bellBlock = document.getElementById("notifications-drop");
+
+        const userBtn = document.getElementById("user-btn");
+        const userBlock = document.getElementById("profile-drop");
+
+        const queryBtn = document.getElementById("query-btn");
+        const queryBlock = document.getElementById("query-box");
+
+        bellBtn.addEventListener('click',  () => {
+            bellBlock.classList.toggle("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+        })
+        
+        userBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            userBlock.classList.toggle("display-drop");
+        })
+        
+        queryBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.toggle("display-drop");
+        })
+
+        function logOut(){
+            window.location.href = "./index.html";
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

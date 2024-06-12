@@ -1,0 +1,370 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    #login-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .user-profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .user-profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .forget-btn {
+        margin-left: auto;
+    }
+</style>
+</head>
+<body>
+
+<div id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="showAddNewForm()">Add New Account</button>
+    <div id="user-profiles"></div>
+</div>
+
+<script>
+    // Check if local storage already contains data
+    if (!localStorage.getItem('accounts')) {
+        var defaultAccount = {
+            email: "user@example.com",
+            password: "password123"
+        };
+        localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
+    }
+
+    displayUserProfiles();
+
+    function displayUserProfiles() {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        var userProfileDiv = document.getElementById('user-profiles');
+        userProfileDiv.innerHTML = '';
+
+        accounts.forEach(function(account) {
+            var userProfile = document.createElement('div');
+            userProfile.classList.add('user-profile');
+            userProfile.innerHTML = `
+                <img src="user.png" alt="User Image">
+                <span>${account.email}</span>
+                <button class="forget-btn" onclick="forgetAccount('${account.email}')">Forget</button>
+            `;
+            userProfileDiv.appendChild(userProfile);
+        });
+    }
+
+    function login() {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+
+        var found = false;
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].email === email) {
+                found = true;
+                if (accounts[i].password === password) {
+                    alert("Login successful!");
+                    return;
+                } else {
+                    alert("Password mismatch!");
+                    return;
+                }
+            }
+        }
+
+        if (!found) {
+            alert("Account not found!");
+        }
+    }
+
+    function showAddNewForm() {
+        var email = prompt("Enter email:");
+        if (email !== null && email !== "") {
+            if (!validateEmail(email)) {
+                alert("Email already exists! Please choose a different email.");
+                return;
+            }
+            var password = prompt("Enter password:");
+            if (password !== null && password !== "") {
+                if (!validatePassword(password)) {
+                    alert("Password already exists! Please choose a different password.");
+                    return;
+                }
+                var newAccount = {
+                    email: email,
+                    password: password
+                };
+
+                var accounts = JSON.parse(localStorage.getItem('accounts'));
+                accounts.push(newAccount);
+                localStorage.setItem('accounts', JSON.stringify(accounts));
+                alert("Account created successfully!");
+                displayUserProfiles();
+            }
+        }
+    }
+
+    function forgetAccount(emailToRemove) {
+        var confirmed = confirm("Are you sure you want to remove this account?");
+        if (confirmed) {
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+            var updatedAccounts = accounts.filter(function(account) {
+                return account.email !== emailToRemove;
+            });
+            localStorage.setItem('accounts', JSON.stringify(updatedAccounts));
+            alert("Account removed successfully!");
+            displayUserProfiles();
+        }
+    }
+
+    function validateEmail(email) {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].email === email) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validatePassword(password) {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].password === password) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    #login-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .user-profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .user-profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .forget-btn {
+        margin-left: auto;
+    }
+</style>
+</head>
+<body>
+
+<div id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="showAddNewForm()">Add New Account</button>
+    <button onclick="logout()">Logout</button>
+    <div id="user-profiles"></div>
+</div>
+
+<script>
+    // Check if local storage already contains data
+    if (!localStorage.getItem('accounts')) {
+        var defaultAccount = {
+            email: "user@example.com",
+            password: "password123"
+        };
+        localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
+    }
+
+    displayUserProfiles();
+
+    function displayUserProfiles() {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        var userProfileDiv = document.getElementById('user-profiles');
+        userProfileDiv.innerHTML = '';
+
+        accounts.forEach(function(account) {
+            var userProfile = document.createElement('div');
+            userProfile.classList.add('user-profile');
+            userProfile.innerHTML = `
+                <img src="user.png" alt="User Image">
+                <span>${account.email}</span>
+                <button class="forget-btn" onclick="forgetAccount('${account.email}')">Forget</button>
+            `;
+            userProfileDiv.appendChild(userProfile);
+        });
+    }
+
+    function validateEmail(email) {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].email === email) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validatePassword(password) {
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].password === password) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function login() {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        var accounts = JSON.parse(localStorage.getItem('accounts'));
+
+        var found = false;
+        for (var i = 0; i < accounts.length; i++) {
+            if (accounts[i].email === email) {
+                found = true;
+                if (accounts[i].password === password) {
+                    alert("Login successful!");
+                    return;
+                } else {
+                    alert("Password mismatch!");
+                    return;
+                }
+            }
+        }
+
+        if (!found) {
+            alert("Account not found!");
+        }
+    }
+
+    function showAddNewForm() {
+        var email = prompt("Enter email:");
+        if (email !== null && email !== "") {
+            if (!validateEmail(email)) {
+                alert("Email already exists! Please choose a different email.");
+                return;
+            }
+            var password = prompt("Enter password:");
+            if (password !== null && password !== "") {
+                if (!validatePassword(password)) {
+                    alert("Password already exists! Please choose a different password.");
+                    return;
+                }
+                var newAccount = {
+                    email: email,
+                    password: password
+                };
+
+                var accounts = JSON.parse(localStorage.getItem('accounts'));
+                accounts.push(newAccount);
+                localStorage.setItem('accounts', JSON.stringify(accounts));
+                alert("Account created successfully!");
+                displayUserProfiles();
+            }
+        }
+    }
+
+    function forgetAccount(emailToRemove) {
+        var confirmed = confirm("Are you sure you want to remove this account?");
+        if (confirmed) {
+            var accounts = JSON.parse(localStorage.getItem('accounts'));
+            var updatedAccounts = accounts.filter(function(account) {
+                return account.email !== emailToRemove;
+            });
+            localStorage.setItem('accounts', JSON.stringify(updatedAccounts));
+            alert("Account removed successfully!");
+            displayUserProfiles();
+        }
+    }
+
+    function logout() {
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+        alert("You have been logged out.");
+    }
+</script>
+
+</body>
+</html>

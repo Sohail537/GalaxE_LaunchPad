@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My courses</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href=""><img src="../assets/GxLaunchPad_icon.png" alt="icon"></a>
+            <div class="nav-links">
+                <a href="./home.html" class="links">Home</a>
+                <a href="" class="links link1">My Courses</a>
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bell" id="bell"></i>
+            <i class="fa-solid fa-comment"></i>
+            <div class="user" id="user-btn">
+                <p class="user-icon">SP</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bell-box notifications" id="notifications-drop">
+        <div class="part1">
+            <h5>Notifications</h5>
+            <div class="part1-links">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <div class="part2"><p>You have no notifications</p></div>
+        <div class="part3"><a href="./notifications.html">See all</a></div>
+    </div>
+
+    <div class="drop-box profile-drop" id="profile-drop">
+        <p>Profile</p>
+        <p>Grades</p>
+        <p>Calendar</p>
+        <p>Private files</p>
+        <p>Reports</p><hr class="line">
+        <p>Preferences</p><hr class="line">
+        <p onclick="logOut()">Log out</p>
+    </div>
+
+    <div class="courses-container" id="courses-container">
+        <header>
+            <h1>My Courses</h1>
+            <h3>Course overview</h3><br>
+        </header>
+
+        <main>
+            <div class="dropdowns">
+                <div class="dropdown">
+                    <button class="all" id="all">All<i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+                <div class="search">
+                    <label for="search"></label>
+                    <input type="text" name="search" placeholder="Search">
+                </div>
+                <div class="dropdown">
+                    <button class="sort" id="sort">Sort by course name<i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+                <div class="dropdown">
+                    <button class="card" id="card">Card<i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="drop-box drop1" id="drop1">
+                <p><i class="fa-solid fa-check"></i>All</p><hr class="line">
+                <p><i class="fa-solid fa-check"></i>In Progress</p>
+                <p><i class="fa-solid fa-check"></i>Future</p>                    
+                <p><i class="fa-solid fa-check"></i>Past</p><hr class="line">
+                <p><i class="fa-solid fa-check"></i>Starred</p><hr class="line">
+                <p><i class="fa-solid fa-check"></i>Removed from view</p>                    
+            </div>
+
+            <div class="drop-box drop2" id="drop2">
+                <p><i class="fa-solid fa-check"></i>Sort by course name</p>
+                <p><i class="fa-solid fa-check"></i>Sort by last accessed</p>                    
+            </div>
+
+            <div class="drop-box drop3" id="drop3">
+                <p><i class="fa-solid fa-check"></i>Card</p>
+                <p><i class="fa-solid fa-check"></i>List</p>
+                <p><i class="fa-solid fa-check"></i>Summary</p>                    
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDQiIGhlaWdodD0iMTQyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMjUzLCAxMjEsIDE2OCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA5OCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3LCAtMjMuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDk4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODcsIC0yMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wOTgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNywgMTE4LjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDk4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODcsIDExOC4zMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjE0MTMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNywgLTIzLjY2NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjE0MTMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNywgMTE4LjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MSwgLTIzLjY2NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjA3MiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEsIDExOC4zMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjEwNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4NSwgLTIzLjY2NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjEwNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4NSwgMTE4LjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTksIC0yMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOSwgMTE4LjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTMsIC0yMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MywgMTE4LjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xMTUzMzMzMzMzMzMzMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA0LCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNCwgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjExNTMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OCwgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjA1NDY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyLCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzYsIDApIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wNzIiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCwgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3LCAyMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNDYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4NywgMjMuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3LCAyMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wNzIiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUxLCAyMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg1LCAyMy42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOSwgMjMuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTA2NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MywgMjMuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCA0Ny4zMzMzMzMzMzMzMzMpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwNCwgNDcuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNCwgNDcuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY4LCA0Ny4zMzMzMzMzMzMzMzMpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4xNDEzMzMzMzMzMzMzMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyLCA0Ny4zMzMzMzMzMzMzMzMpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wOTgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNiwgNDcuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCwgNDcuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTcsIDcxKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODcsIDcxKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNywgNzEpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNDYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUxLCA3MSkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjEyNCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODUsIDcxKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTA2NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOSwgNzEpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MywgNzEpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgOTQuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDIiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwNCwgOTQuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNCwgOTQuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OCwgOTQuNjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNywgMCwgMzQsIDIzLjY2NjY2NjY2NjY2NywgMTcsIDQ3LjMzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDIsIDk0LjY2NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcsIDAsIDM0LCAyMy42NjY2NjY2NjY2NjcsIDE3LCA0Ny4zMzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM2LCA5NC42NjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LCAwLCAzNCwgMjMuNjY2NjY2NjY2NjY3LCAxNywgNDcuMzMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3MCwgOTQuNjY2NjY2NjY2NjY3KSIgLz48L3N2Zz4=" alt="Box">
+                    <div class="box-text">
+                        <a href="course_view.html">Internship Batch 2</a>
+                        <p>Category 1</p>
+                    </div>
+                </div>
+                <i class="ri-more-2-fill menu" id="menu"></i>
+
+                <div class="drop-box menu-popup" id="menu-popup">
+                    <p>Star this course</p>
+                    <p>Remove from view</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="courses-footer footer" id="query-btn">
+        <a href="#">?</a>
+    </footer>
+
+    <div class="footer-drop">
+        <div class="footer-box query-box" id="query-box">
+            <p><i class="fa-regular fa-envelope"></i> <a href="">Contact site support</a></p><hr class="line">
+            <p>You are logged in as <a href="">Sohail Ahamed Khan Pathan (Log out)</a></p>
+            <p><a href="">Reset user tour on this page</a></p>
+            <p><a href="">Data retention summary</a></p><hr class="line">
+            <p>Powered by <a href="">Moodle</a></p>
+        </div>
+    </div>
+
+    <script>
+        const userBtn = document.getElementById("user-btn");
+        const allBtn = document.getElementById("all");
+        const sortBtn = document.getElementById("sort");
+        const cardBtn = document.getElementById("card");
+        const queryBtn = document.getElementById("query-btn");
+        const menuBtn = document.getElementById("menu");
+        const bellBtn = document.getElementById("bell");
+        
+        const userBlock = document.getElementById("profile-drop");
+        const allBlock = document.getElementById("drop1");
+        const sortBlock = document.getElementById("drop2");
+        const cardBlock = document.getElementById("drop3");
+        const queryBlock = document.getElementById("query-box");
+        const menuBlock = document.getElementById("menu-popup");
+        const bellBlock = document.getElementById("notifications-drop");
+
+        bellBtn.addEventListener('click',  () => {
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            allBlock.classList.remove("display-drop");
+            sortBlock.classList.remove("display-drop");
+            cardBlock.classList.remove("display-drop");
+            bellBlock.classList.toggle("display-drop");
+        })
+
+        userBtn.addEventListener('click', () => {
+            bellBlock.classList.remove("display-drop");
+            allBlock.classList.remove("display-drop");
+            sortBlock.classList.remove("display-drop");
+            cardBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            userBlock.classList.toggle("display-drop");
+        })
+
+        allBtn.addEventListener('click', () => {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            sortBlock.classList.remove("display-drop");
+            cardBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            allBlock.classList.toggle("display-drop");
+        })
+        
+        sortBtn.addEventListener('click', () => {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            allBlock.classList.remove("display-drop");
+            cardBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            sortBlock.classList.toggle("display-drop");
+        })
+        
+        cardBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            allBlock.classList.remove("display-drop");
+            sortBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            cardBlock.classList.toggle("display-drop");
+        })
+
+        queryBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            allBlock.classList.remove("display-drop");
+            sortBlock.classList.remove("display-drop");
+            cardBlock.classList.remove("display-drop");
+            queryBlock.classList.toggle("display-drop");
+        })
+
+        menuBtn.addEventListener('click', () => {
+            menuBlock.classList.toggle("display-drop");
+        })
+
+        function logOut(){
+            window.location.href = "./index.html";
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

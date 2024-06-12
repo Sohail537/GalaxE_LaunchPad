@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gxLAUNCHPAD</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="./my_courses.html"><img src="../assets/GxLaunchPad_icon.png" alt="icon"></a>
+            <div class="nav-links">
+                <a href="./home.html" class="links">Home</a>
+                <a href="./my_courses.html" class="links">My Courses</a>
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bell" id="bell"></i>
+            <i class="fa-solid fa-comment"></i>
+            <div class="user" id="user-btn">
+                <p class="user-icon">SP</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bell-box notifications" id="notifications-drop">
+        <div class="part1">
+            <h5>Notifications</h5>
+            <div class="part1-links">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <div class="part2"><p>You have no notifications</p></div>
+        <div class="part3"><a href="./notifications.html">See all</a></div>
+    </div>
+
+    <div class="drop-box profile-drop" id="profile-drop">
+        <p>Profile</p>
+        <p>Grades</p>
+        <p>Calendar</p>
+        <p>Private files</p>
+        <p>Reports</p><hr class="line">
+        <p>Preferences</p><hr class="line">
+        <p onclick="logOut()">Log out</p>
+    </div>
+
+    <div class="assignment-container">
+        <header>
+            <p class="assignment-title"><a href="course_view.html">IntB2</a> / DBMS Assignment</p>
+            <div class="assignment-module-content">
+                <div class="quiz"><img src="../assets/upload.svg" alt="assignment"></div>
+                <h1>DBMS Assignment</h1>
+            </div>
+            <div class="assignment-deadline">
+                <button class="assignment-module-btn">Mark as done</button>
+                <hr class="line">
+                <p class="first"><b>Opened:</b> Wednesday, 21 February 2024, 12:00 AM</p>
+                <p class="second"><b>Due:</b> Wednesday, 21 February 2024, 11:00 PM</p>
+                <hr class="line">
+            </div>
+        </header>
+
+        <main class="assignment-main">
+            <div class="btns">
+                <div class="assignment-btn">Edit Submission</div>
+                <div class="assignment-btn">Remove Submission</div>
+            </div>
+
+            <div class="submission">
+                <h2>Submission status</h2>
+
+                <table class="table">
+                    <tr>
+                        <td><h5>Submission status</h5></td>
+                        <td class="select1"><p>Submitted for grading</p></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Grading status</h5></td>
+                        <td><p>Not graded</p></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Time Remaining</h5></td>
+                        <td class="select2"><p>Assignment was submitted 12 hours 33 minutes late</p></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Last modified</h5></td>
+                        <td><p>Thursday, 22 February 2024, 11:33 A.M</p></td>
+                    </tr>
+                    <tr>
+                        <td><h5>File submissions</h5></td>
+                        <td class="select3">
+                            <p class="select3-links">
+                                <img src="../assets/submission.png" alt="submission"> 
+                                <a download="ER diagram for E-Learning Platform.png" href="" title="ER"> ER diagram for E-Learning Platform.png </a> 22 February 2024, 11:33 AM
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h5>Submission comments</h5></td>
+                        <td class="table-last" id="table-last">
+                            <div class="select4" id="select4">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Comments (0)</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="comment-block" id="comment-block">
+                <textarea name="comments" id="comments" placeholder="Add a comment..."></textarea>
+                <div class="comment-links">
+                    <a href="#">Save comment</a>
+                    <p>|</p>
+                    <a href="#">Cancel</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="home-footer footer" id="query-btn">
+        <a href="#">?</a>
+    </footer>
+
+    <div class="footer-drop">
+        <div class="footer-box query-box" id="query-box">
+            <p><i class="fa-regular fa-envelope"></i> <a href="">Contact site support</a></p><hr class="line">
+            <p>You are logged in as <a href="">Sohail Ahamed Khan Pathan (Log out)</a></p>
+            <p><a href="">Reset user tour on this page</a></p>
+            <p><a href="">Data retention summary</a></p><hr class="line">
+            <p>Powered by <a href="">Moodle</a></p>
+        </div>
+    </div>
+
+    <script>
+        const bellBtn = document.getElementById("bell");
+        const bellBlock = document.getElementById("notifications-drop");
+        
+        const userBtn = document.getElementById("user-btn");
+        const userBlock = document.getElementById("profile-drop");
+        
+        const queryBtn = document.getElementById("query-btn");
+        const queryBlock = document.getElementById("query-box");
+        
+        const commentBtn = document.getElementById("select4");
+        const lastBlock = document.getElementById("table-last");
+        const commentBlock = document.getElementById("comment-block");
+
+        bellBtn.addEventListener('click',  () => {
+            bellBlock.classList.toggle("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+        })
+        
+        userBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            userBlock.classList.toggle("display-drop");
+        })
+        
+        queryBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.toggle("display-drop");
+        })
+
+        commentBtn.addEventListener('click', () => {
+            commentBlock.classList.toggle("display-drop");
+            lastBlock.appendChild(commentBlock);
+        })
+
+        function logOut(){
+            window.location.href = "./index.html";
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

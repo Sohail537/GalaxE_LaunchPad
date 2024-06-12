@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Internship- Batch 2</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href=""><img src="../assets/GxLaunchPad_icon.png" alt="icon"></a>
+            <div class="nav-links">
+                <a href="./home.html" class="links">Home</a>
+                <a href="./my_courses.html" class="links link1">My Courses</a>
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bell" id="bell"></i>
+            <i class="fa-solid fa-comment"></i>
+            <div class="user" id="user-btn">
+                <p class="user-icon">SP</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bell-box notifications" id="notifications-drop">
+        <div class="part1">
+            <h5>Notifications</h5>
+            <div class="part1-links">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </div>
+        <div class="part2"><p>You have no notifications</p></div>
+        <div class="part3"><a href="./notifications.html">See all</a></div>
+    </div>
+
+    <div class="drop-box profile-drop" id="profile-drop">
+        <p>Profile</p>
+        <p>Grades</p>
+        <p>Calendar</p>
+        <p>Private files</p>
+        <p>Reports</p><hr class="line">
+        <p>Preferences</p><hr class="line">
+        <p onclick="logOut()">Log out</p>
+    </div>
+
+    <!-- <div class="sidebar">
+        <i class="fa-solid fa-list"></i>
+        <div class="list-view">
+            <div class="list1">
+                <i class="fa-solid fa-chevron-right arrow-down"></i>
+                <h6>General</h6>
+            </div>
+            <div class="list1">
+                <i class="fa-solid fa-chevron-right arrow-down"></i>
+                <h6>Skillset Certificates</h6>
+            </div>
+            <div class="list1">
+                <i class="fa-solid fa-chevron-right arrow-down"></i>
+                <h6>Java</h6>
+            </div>
+            <div class="list1">
+                <i class="fa-solid fa-chevron-right arrow-down"></i>
+                <h6>Assignments</h6>
+            </div>
+            <div class="list1">
+                <i class="fa-solid fa-chevron-right arrow-down"></i>
+                <h6>Topic 4</h6>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="module-container" id="module-container">
+        <header>
+            <h1 id="container-heading">Internship- Batch2</h1>
+        </header>
+        
+        <div class="topbar" id="topbar">
+            <div class="course-option top-link1" id="course-option">
+                <p class="navbar">Course</p>
+            </div>
+            <div class="grades-option" id="grades-option">
+                <p class="navbar">Grades</p>
+            </div>
+            <div class="competencies-option" id="competencies-option">
+                <p class="navbar">Competencies</p>
+            </div>
+        </div>
+
+        <div class="course-main" id="course-main">
+            <hr class="course-line">
+
+            <div class="course-module">
+                <div class="modules">
+                    <div class="module-heading module1">
+                        <div><i class="fa-solid fa-chevron-right arrow-down"></i></div>
+                        <div class="content1">
+                            <h2>General</h2>
+                            <a href="#" class="module-expand" id="module-expand">Expand all</a>
+                            <a href="" class="module-collapse" id="module-collapse">Collapse all</a>
+                        </div>
+                    </div>
+    
+                    <div class="module-drop">
+                        <div class="module-block">
+                            <div class="module-content">
+                                <div class="general"><img src="../assets/message.svg" alt="message"></div>
+                                <a href="#">Announcements</a>
+                            </div>
+                        </div>
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="material"><img src="../assets/note.svg" alt="note"></div>
+                                    <a href="#">SE_Course material</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                        </div>
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/quiz.svg" alt="quiz"></div>
+                                    <a href="./quiz.html">SE_Quiz</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Tuesday, 13 February 2024, 11:10 AM</p>
+                                <p><b>Closed:</b> Tuesday, 13 February 2024, 11:25 AM</p>
+                            </div>
+                        </div>
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="material"><img src="../assets/note.svg" alt="note"></div>
+                                    <a href="#">BA_Day 1</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                        </div>
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/upload.svg" alt="upload"></div>
+                                    <a href="./assignment.html">DBMS Assignment</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Wednesday, 21 February 2024, 12:00 AM</p>
+                                <p><b>Closed:</b> Wednesday, 21 February 2024, 11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="line">
+                </div>
+    
+                <div class="modules">
+                    <div class="module-heading module2">
+                        <div><i class="fa-solid fa-chevron-right arrow-down"></i></div>
+                        <h2>Skillset Certificates</h2>
+                    </div>
+    
+                    <div class="module-drop">
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/upload.svg" alt="upload"></div>
+                                    <a href="#">Certificates</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Tuesday, 13 February 2024, 12:00 AM</p>
+                                <p><b>Due:</b> Sunday, 2 June 2024, 12:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="line">
+                </div>
+    
+                <div class="modules">
+                    <div class="module-heading module3">
+                        <div><i class="fa-solid fa-chevron-right arrow-down"></i></div>
+                        <h2>Java</h2>
+                    </div>
+    
+                    <div class="module-drop">
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/quiz.svg" alt="quiz"></div>
+                                    <a href="#">Quiz 1</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Wednesday, 28 February 2024, 12:00 PM</p>
+                                <p><b>Closed:</b> Wednesday, 28 February 2024, 12:05 PM</p>
+                            </div>
+                        </div>
+    
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/quiz.svg" alt="quiz"></div>
+                                    <a href="#">Quiz 2</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Friday, 1 March 2024, 12:15 PM</p>
+                                <p><b>Closed:</b> Friday, 1 March 2024, 12:20 PM</p>
+                            </div>
+                        </div>
+    
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/quiz.svg" alt="quiz"></div>
+                                    <a href="#">Quiz 3</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Wednesday, 6 March 2024, 12:10 PM</p>
+                                <p><b>Closed:</b> Wednesday, 6 March 2024, 12:20 PM</p>
+                            </div>
+                        </div>
+    
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/quiz.svg" alt="quiz"></div>
+                                    <a href="#">Quiz 4</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Tuesday, 12 March 2024, 11:40 AM</p>
+                                <p><b>Closed:</b> Tuesday, 12 March 2024, 11:50 AM</p>
+                            </div>
+                        </div>
+    
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/upload.svg" alt="upload"></div>
+                                    <a href="#">Java Project</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Monday, 1 April 2024, 12:00 AM</p>
+                                <p><b>Due:</b> Monday, 8 April 2024, 12:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="line">
+                </div>
+                
+                <div class="modules">
+                    <div class="module-heading module4">
+                        <div><i class="fa-solid fa-chevron-right arrow-down"></i></div>
+                        <h2>Assignments</h2>
+                    </div>
+    
+                    <div class="module-drop">
+                        <div class="module-block">
+                            <div class="text">
+                                <div class="module-content">
+                                    <div class="quiz"><img src="../assets/upload.svg" alt="upload"></div>
+                                    <a href="#">Java Assignment-1</a>
+                                </div>
+                                <button class="module-btn">Mark as done</button>
+                            </div>
+                            <div class="deadline">
+                                <p><b>Opened:</b> Wednesday, 13 March 2024, 12:00 AM</p>
+                                <p><b>Due:</b> Thursday, 14 March 2024, 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="line">
+                </div>
+    
+                <div class="modules">
+                    <div class="module-heading module4">
+                        <div><i class="fa-solid fa-chevron-right arrow-down"></i></div>
+                        <h2>Topic 4</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grades-container" id="grades-container">  
+            <hr class="other-line">      
+            <div class="grade-box">
+                <p>Cannot view grades.</p>
+                <a href="https://docs.moodle.org/402/en/error/moodle/nopermissiontoviewgrades">More information about this error</a>
+            </div>
+            <button>Continue</button>
+        </div>
+    
+        <div class="competencies-container" id="competencies-container">
+            <hr class="other-line">
+            <div class="competencies-box">
+                <h1>Course competencies</h1>
+                <div class="sub-box">
+                    <div class="sub-div1">
+                        <i class="fa-solid fa-xmark"></i>
+                        <h4> No filters applied</h4>
+                    </div>
+                    <div class="sub-div2">
+                        <input type="text" placeholder="Filter competencies by resource or activity">
+                        <i class="fa-sharp fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box-bottom">
+                <p>No competencies have been linked to this course.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="module-footer footer" id="query-btn">
+        <a href="#">?</a>
+    </footer>
+
+    <div class="footer-drop">
+        <div class="footer-box query-box" id="query-box">
+            <p><i class="fa-regular fa-envelope"></i> <a href="">Contact site support</a></p><hr class="line">
+            <p>You are logged in as <a href="">Sohail Ahamed Khan Pathan (Log out)</a></p>
+            <p><a href="">Reset user tour on this page</a></p>
+            <p><a href="">Data retention summary</a></p><hr class="line">
+            <p>Powered by <a href="">Moodle</a></p>
+        </div>
+    </div>
+
+    <script>
+        const modules = document.querySelectorAll(".modules");
+        
+        modules.forEach(module => {
+            module.addEventListener('click', () => {
+                module.classList.toggle("active");
+            })
+        });
+
+        const bellBtn = document.getElementById("bell");
+        const bellBlock = document.getElementById("notifications-drop");
+
+        const userBtn = document.getElementById("user-btn");
+        const userBlock = document.getElementById("profile-drop");
+
+        const queryBtn = document.getElementById("query-btn");
+        const queryBlock = document.getElementById("query-box");
+
+        const courseBtn = document.getElementById("course-option");
+        const courseBlock = document.getElementById("course-main");
+
+        const gradesBtn = document.getElementById("grades-option");
+        const gradesBlock = document.getElementById("grades-container");
+        
+        const competenciesBtn = document.getElementById("competencies-option");
+        const competenciesBlock = document.getElementById("competencies-container");
+
+        bellBtn.addEventListener('click',  () => {
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            bellBlock.classList.toggle("display-drop");
+        })
+
+        userBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            userBlock.classList.toggle("display-drop");
+        })
+        
+        queryBtn.addEventListener('click', ()=> {
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.toggle("display-drop");
+        })
+
+        const expandBtn = document.getElementById("module-expand");
+        const collapseBtn = document.getElementById("module-collapse");
+
+        expandBtn.addEventListener('click', () => {
+            modules.forEach(module => {
+                module.classList.add("show");
+            })
+            bellBlock.classList.remove("display-drop");
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            collapseBtn.style.display = "block";
+            collapseBtn.classList.add("show");
+            expandBtn.style.display = "none";
+        });
+        
+        collapseBtn.addEventListener('click', () => {
+            modules.forEach(module => {
+                module.classList.add("hide");
+            })
+            userBlock.classList.remove("display-drop");
+            queryBlock.classList.remove("display-drop");
+            collapseBtn.style.display = "none";
+            expandBtn.style.display = "block";
+        })
+
+        courseBtn.addEventListener('click', () => {
+            competenciesBlock.classList.remove("display-drop");
+            gradesBlock.classList.remove("display-drop");
+            courseBlock.classList.remove("hide-drop");
+            courseBtn.classList.add("top-link1");
+            competenciesBtn.classList.remove("top-link1");
+            gradesBtn.classList.remove("top-link1");
+        })
+        
+        gradesBtn.addEventListener('click', () => {
+            competenciesBlock.classList.remove("display-drop");
+            courseBlock.classList.add("hide-drop");
+            gradesBlock.classList.add("display-drop");
+            gradesBtn.classList.add("top-link1");
+            courseBtn.classList.remove("top-link1");
+            competenciesBtn.classList.remove("top-link1");
+        })
+        
+        competenciesBtn.addEventListener('click', () => {
+            gradesBlock.classList.remove("display-drop");
+            courseBlock.classList.add("hide-drop");
+            competenciesBlock.classList.add("display-drop");
+            competenciesBtn.classList.add("top-link1");
+            gradesBtn.classList.remove("top-link1");
+            courseBtn.classList.remove("top-link1");
+        })
+
+        function logOut(){
+            window.location.href = "./index.html";
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>
